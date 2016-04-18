@@ -1,0 +1,19 @@
+// Here the pixel2 = ... computation is shortened to one line
+image = new SimpleImage("abby.jpg");
+back = new SimpleImage("leaves.jpg");
+
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  //the avg function here pulls the average color of the pixels
+  if (pixel.getGreen() > avg * 1.05) {
+    // 1. Get pixel2 from back image at same x,y (one line)
+    pixel2 = back.getPixel(pixel.getX(), pixel.getY());
+      //the above code could also be written as x= pixel.getX(); and y = pixel.getY();
+
+    // 2. Copy pixel2 over to pixel
+    pixel.setRed(pixel2.getRed());
+    pixel.setGreen(pixel2.getGreen());
+    pixel.setBlue(pixel2.getBlue());
+  }
+}
+print(image);
