@@ -1,0 +1,12 @@
+//learning to set pixels to different colors on the RGB scale. In this case pixel (1,0) to be yellow.
+
+image = new SimpleImage("x.png");
+image.setZoom(20);
+
+pixel = image.getPixel(1, 0);
+pixel.setRed(255);
+pixel.setGreen(255);
+// Calling getPixel(1, 0) edits the pixel
+// one to the right of pixel (0, 0).
+
+print(image);
