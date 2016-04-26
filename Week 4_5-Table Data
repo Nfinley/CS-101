@@ -1,0 +1,13 @@
+// These are the notes from Week 4 and 5 of CS101 that discuss pulling data from tables
+
+table = new SimpleTable("baby-2010.csv");
+//this designates the table to pull from
+
+for (row: table) {
+//this begins the for loop
+  if (row.getField("name") == "River") {
+  //this indicates which data in the columns to pull, in this case all babies named River
+  print(row) 
+  }
+  
+}
