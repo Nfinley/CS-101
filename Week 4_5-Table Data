@@ -32,5 +32,16 @@ for (row: table) {
     //or return all names greater than or equal to 900
   }
 }
-  
+  //table counting
+  table = new SimpleTable("baby-2010.csv");
+count = 0;
+for (row: table) {
+  if (row.getField("name").startsWith("A") &&
+  row.getField("gender")=="boy")) {
+    print(row); //this prints the if statement above
+    
+    count = count + 1;  // increases the value in count by 1
+  }
+}
+print("count:", count);
 
