@@ -6,17 +6,17 @@ table = new SimpleTable("baby.csv");
 for (row: table) {
 //this begins the for loop
   if (row.getField("name") == "River") {
-  //this indicates which data in the columns to pull, in this case all babies named River, the == is an equals operator
+  //this indicates which data in the columns to pull, in this case all babies named River, the '==' is an equals operator
   print(row) 
   }
   
 }
-//startsWith and endswith functions
+//startsWith and endswith functions: https://lagunita.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z196/
   (row.getField ("name") .startsWith("Ab")) {...
   (row.getField ("name") .endsWith("Ab")) {...
   //these commands are not common in Javascript but do appear in other languages
 
-//Boolean Logic: && and !
+//Boolean Logic: && and ! : https://lagunita.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z192/
   //in code 'and' is && (two ampersands)
   // 'or' is || (two vertical bars) and is a slightly wider search then &&
   // 'not' is ! (exclamation point)
@@ -32,7 +32,7 @@ for (row: table) {
     //or return all names greater than or equal to 900
   }
 }
-  //table counting
+  //Table counting
   table = new SimpleTable("baby-2010.csv");
 count = 0;
 for (row: table) {
@@ -44,4 +44,29 @@ for (row: table) {
   }
 }
 print("count:", count);
+
+//Table counting with multiple varibles: 'https://lagunita.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z200/'
+table = new SimpleTable("survey-2012.csv");
+table.convertToLowerCase(); 
+count1 = 0;
+count2 = 0;
+count3 = 0; //these are the variables that store the various counts
+for (row: table) {
+  if(row.getField("soda")=="sprite" ||
+  row.getField("soda")=="diet sprite" ) {
+  count1= count1 + 1;
+  }
+  if(row.getField("soda")=="dr pepper" || 
+  row.getField("soda")=="diet dr pepper" ) {
+  count2= count2 + 1;
+  }
+  if(row.getField("soda")=="coke" || 
+  row.getField("soda")=="diet coke" ) {
+  count3= count3 + 1;
+  }
+
+}
+print("count sprite:", count1);
+print("count dr pepper:", count2);
+print("count coke:", count3);
 
